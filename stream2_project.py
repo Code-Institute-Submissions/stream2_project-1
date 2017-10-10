@@ -19,6 +19,11 @@ def index():
     return render_template("index.html")
 
 
+@app.route('/statistics')
+def stats():
+    return render_template('statistics.html')
+
+
 @app.route("/donorsUS/projects")
 def donor_projects():
     """
