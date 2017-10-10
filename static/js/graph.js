@@ -1,4 +1,4 @@
-d3.queue()
+queue()
     .defer(d3.json, "/donorsUS/projects")
     .await(makeGraphs);
 
