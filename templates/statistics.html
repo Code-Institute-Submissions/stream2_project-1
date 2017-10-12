@@ -3,8 +3,6 @@
 {% block content %}
 <div  id="outer" class="container-fluid">
     <div class="row">
-        <div class="col-sm-8">
-            <div class="row">
                 <!-- Time Chart -->
                 <div class="col-sm-12">
                     <div class="chart-wrapper">
@@ -17,22 +15,11 @@
                     </div>
                 </div>
                 <!-- Time Chart -->
+    </div>
 
-                <!-- Resources -->
-                <div class="col-sm-6">
-                    <div class="chart-wrapper">
-                        <div class="chart-title">
-                            Resources Type
-                        </div>
-                        <div class="chart-stage">
-                            <div id="resource-type-row-chart"></div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Resources -->
-
+    <div class="row">
                 <!-- funding Pie -->
-                <div class="col-sm-6">
+                <div class="col-sm-2">
                     <div class="chart-wrapper">
                         <div class="chart-title">
                             Funding Status
@@ -43,11 +30,9 @@
                     </div>
                 </div>
                 <!-- funding Pie -->
-            </div>
-        </div>
 
         <!-- Poverty -->
-        <div class="col-sm-3">
+        <div class="col-sm-5">
             <div class="chart-wrapper">
                 <div class="chart-title">
                     Poverty Level
@@ -59,8 +44,23 @@
         </div>
         <!-- Poverty -->
 
+        <!-- Resources -->
+                <div class="col-sm-5">
+                    <div class="chart-wrapper">
+                        <div class="chart-title">
+                            Resources Type
+                        </div>
+                        <div class="chart-stage">
+                            <div id="resource-type-row-chart"></div>
+                        </div>
+                    </div>
+                </div>
+        <!-- Resources -->
+
+    </div>
+    <div class="row">
         <!-- menu select -->
-        <div class="col-sm-6">
+        <div class="col-sm-2">
             <div class="chart-wrapper">
                 <div class="chart-title">
                     Donation State
@@ -73,7 +73,7 @@
         <!-- menu select -->
 
         <!-- Metric 1 -->
-        <div class="col-sm-2">
+        <div class="col-sm-5">
             <div class="chart-wrapper">
                 <div class="chart-title">
                     Total Number of Donations
@@ -93,7 +93,7 @@
         <!-- Metric 1 -->
 
         <!-- Metric 2 -->
-        <div class="col-sm-2">
+        <div class="col-sm-5">
             <div class="chart-wrapper">
                 <div class="chart-title">
                     Total Donations in USD
@@ -104,6 +104,36 @@
             </div>
         </div>
         <!-- Metric 2 -->
+    </div>
+
+    <div class="row">
+        <!-- State Donations Chart -->
+        <div class="col-sm-12">
+            <div class="chart-wrapper">
+                <div class="chart-title">
+                    Number of Donations by State
+                </div>
+                <div class="chart-stage">
+                    <div id="state-donations-chart"></div>
+                </div>
+            </div>
+        </div>
+        <!-- State Donations Chart -->
+
+    </div>
+
+    <div class="row">
+        <!-- Metric 2 -->
+        <div class="col-sm-5">
+            <div class="chart-wrapper">
+                <div class="chart-title">
+                    Florida Total Donations
+                </div>
+                <div class="chart-stage">
+                    <div id="spotlightState-nd"></div>
+                </div>
+            </div>
+        </div>
     </div>
 
 </div>

@@ -47,6 +47,9 @@ function makeGraphs(error, donorsUSProjects) {
         return d["total_donations"];
     });
     var stateGroup = stateDim.group();
+    var spotlightState = stateDim.filter("FL").reduceSum(function (d) {
+        return d["total_donations"];
+    });
 
 
     var all = ndx.groupAll();
@@ -57,15 +60,19 @@ function makeGraphs(error, donorsUSProjects) {
     //Define values (to be used in charts)
     var minDate = dateDim.bottom(1)[0]["date_posted"];
     var maxDate = dateDim.top(1)[0]["date_posted"];
+    var maxState = totalDonationsByState.top(1)[0].value;
 
     //Charts
-    var timeChart = dc.lineChart("#time-chart");
+    var timeChart = dc.barChart("#time-chart");
     var resourceTypeChart = dc.rowChart("#resource-type-row-chart");
     var povertyLevelChart = dc.rowChart("#poverty-level-row-chart");
     var numberProjectsND = dc.numberDisplay("#number-projects-nd");
     var totalDonationsND = dc.numberDisplay("#total-donations-nd");
+    var spotlightStateND = dc.numberDisplay("#spotlightState-nd");
     var fundingStatusChart = dc.pieChart("#funding-chart");
+
     var selectField = dc.selectMenu('#menu-select');
+    var donationsByStateChart = dc.barChart("#state-donations-chart");
 
 
     selectField
@@ -94,12 +101,12 @@ function makeGraphs(error, donorsUSProjects) {
         .margins({top: 30, right: 50, bottom: 30, left: 50})
         .dimension(dateDim)
         .group(numProjectsByDate)
-        .renderArea(true)
+        //.renderArea(true)
         .transitionDuration(500)
         .x(d3.time.scale().domain([minDate, maxDate]))
         .elasticY(true)
         .xAxisLabel("Year")
-        .yAxis().ticks(6);
+        .yAxis().ticks(4);
 
 
     resourceTypeChart
@@ -126,6 +133,31 @@ function makeGraphs(error, donorsUSProjects) {
         .transitionDuration(1500)
         .dimension(fundingStatus)
         .group(numProjectsByFundingStatus);
+
+    donationsByStateChart
+        .width(1800)
+        .height(400)
+        .ordinalColors(['#0052a5'])
+        .transitionDuration(500)
+        .margins({top: 30, right: 50, bottom: 30, left: 50})
+        .dimension(stateDim)
+        .group(totalDonationsByState)
+        .centerBar(false)
+        .gap(5)
+        .elasticY(true)
+        .xUnits(dc.units.ordinal)
+        .xAxisLabel("States")
+        .x(d3.scale.ordinal().domain(stateGroup))
+        .y(d3.scale.linear().domain([0, maxState]))
+        .yAxis().tickFormat(d3.format("s")).ticks(7);
+
+    spotlightStateND
+        .formatNumber(d3.format("d"))
+        .valueAccessor(function (d) {
+            return d;
+        })
+        .group(spotlightState)
+        .formatNumber(d3.format(".3s"));
 
 
     dc.renderAll();
