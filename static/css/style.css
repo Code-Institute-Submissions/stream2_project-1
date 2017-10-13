@@ -1,3 +1,16 @@
+#background {
+    background-attachment: fixed;
+    background-image: url("../images/welcome_to_florida.jpg");
+    -webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+    background-size: cover;
+    position: relative;
+}
+
+
+
+
 #number-projects-nd {
    font-size: 60px;
 }

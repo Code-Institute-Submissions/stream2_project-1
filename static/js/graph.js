@@ -47,9 +47,9 @@ function makeGraphs(error, donorsUSProjects) {
         return d["total_donations"];
     });
     var stateGroup = stateDim.group();
-    var spotlightState = stateDim.filter("FL").reduceSum(function (d) {
+    /*var spotlightState = stateDim.filter("FL").reduceSum(function (d) {
         return d["total_donations"];
-    });
+    });*/
 
 
     var all = ndx.groupAll();
@@ -68,7 +68,7 @@ function makeGraphs(error, donorsUSProjects) {
     var povertyLevelChart = dc.rowChart("#poverty-level-row-chart");
     var numberProjectsND = dc.numberDisplay("#number-projects-nd");
     var totalDonationsND = dc.numberDisplay("#total-donations-nd");
-    var spotlightStateND = dc.numberDisplay("#spotlightState-nd");
+    //var spotlightStateND = dc.numberDisplay("#spotlightState-nd");
     var fundingStatusChart = dc.pieChart("#funding-chart");
 
     var selectField = dc.selectMenu('#menu-select');
@@ -151,13 +151,13 @@ function makeGraphs(error, donorsUSProjects) {
         .y(d3.scale.linear().domain([0, maxState]))
         .yAxis().tickFormat(d3.format("s")).ticks(7);
 
-    spotlightStateND
+    /*spotlightStateND
         .formatNumber(d3.format("d"))
         .valueAccessor(function (d) {
             return d;
         })
         .group(spotlightState)
-        .formatNumber(d3.format(".3s"));
+        .formatNumber(d3.format(".3s"));*/
 
 
     dc.renderAll();
