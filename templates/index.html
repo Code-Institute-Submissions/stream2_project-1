@@ -9,13 +9,18 @@
     <link rel="stylesheet" href="{{url_for ('static', filename='lib/css/introjs.css')}}" />
 </head>
 <body id="background" class="application">
-    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
                 <a class="navbar-brand" href="./">School Donations Dashboard</a>
             </div>
+            <div>
+                <ul>
+                    <li><a href="/statistics">Statistics</a></li>
+                </ul>
+            </div>
         </div>
-    </div>
+    </nav>
   
   {% block content %}
   
