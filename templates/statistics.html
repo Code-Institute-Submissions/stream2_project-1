@@ -4,10 +4,10 @@
 <div  id="outer" class="container-fluid content-container">
     <div class="row">
         <div class="col-md-2">
-            <button class="intro_button btn btn-default learn-more" type="button" autofocus onclick="javascript:introJs().start();">Learn More</button>
+            <button class="intro_button btn btn-default learn-more" type="button" autofocus onclick="javascript:introJs().setOptions({'skipLabel': 'Exit'}).start();">Learn More</button>
 
         </div>
-        <div class="col-md-10 stats-heading">
+        <div class="col-md-10 stats-heading content-blocks">
             <h1>National School Donations Statistics</h1>
         </div>
 
@@ -18,7 +18,7 @@
         <div class="col-md-2">
             <div class="row">
                 <div class="col-md-12">
-                    <div class="chart-wrapper stacked-divs">
+                    <div class="chart-wrapper stacked-divs" data-step="1" data-intro="Here you can select an overall view of the national data or specific states." style="font-weight: normal" data-position="right">
                         <div class="chart-title">
                             Donation State
                         </div>
@@ -32,7 +32,7 @@
             </div>
             <div class="row">
                 <div class="col-md-12">
-                     <div class="chart-wrapper stacked-divs">
+                     <div class="chart-wrapper stacked-divs" data-step="2" data-intro="This is the total number of donations nationally or per state." style="font-weight: normal" data-position="right">
                         <div class="chart-title">
                             Total Number of Donations
                         </div>
@@ -45,7 +45,7 @@
             </div>
             <div class="row">
                 <div class="col-md-12">
-                    <div class="chart-wrapper stacked-divs">
+                    <div class="chart-wrapper stacked-divs" data-step="3" data-intro="This is the total amount of donations in USD." style="font-weight: normal" data-position="right">
                         <div class="chart-title">
                             Total Donations in USD
                         </div>
@@ -58,8 +58,8 @@
 
 
         </div>
-        <div class="col-md-10" data-step="1" data-intro="The description that you want" style="font-weight: normal" data-position="right">
-            <div class="chart-wrapper">
+        <div class="col-md-10">
+            <div class="chart-wrapper" data-step="4" data-intro="This graph shows us a timeline of donations received." style="font-weight: normal" data-position="bottom">
                 <div class="chart-title">
                     Number of Donations
                 </div>
@@ -72,7 +72,8 @@
     <div class="row">
         <!-- State Donations Chart -->
         <div class="col-sm-12">
-            <div class="chart-wrapper">
+            <div class="chart-wrapper" data-step="5" data-intro="This graph gives us a visual breakdown of donations received by individual states. As you can see, as the most
+                populous state in the US, California is not receiving nearly enough funding compared to some other districts." style="font-weight: normal" data-position="top">
                 <div class="chart-title">
                     Number of Donations by State
                 </div>
@@ -88,7 +89,7 @@
     <div class="row">
                 <!-- funding Pie -->
                 <div class="col-sm-2">
-                    <div class="chart-wrapper">
+                    <div class="chart-wrapper" data-step="6" data-intro="You can see here the current status of the funding received." style="font-weight: normal" data-position="right">
                         <div class="chart-title">
                             Funding Status
                         </div>
@@ -101,7 +102,7 @@
 
         <!-- Poverty -->
         <div class="col-sm-5">
-            <div class="chart-wrapper">
+            <div class="chart-wrapper" data-step="7" data-intro="Here you can see a breakdown of donations based on the poverty levels" style="font-weight: normal" data-position="right">
                 <div class="chart-title">
                     Poverty Level
                 </div>
@@ -114,7 +115,7 @@
 
         <!-- Resources -->
                 <div class="col-sm-5">
-                    <div class="chart-wrapper">
+                    <div class="chart-wrapper" data-step="8" data-intro="Finally this graph will give you an idea of how donations received have been used." style="font-weight: normal" data-position="left">
                         <div class="chart-title">
                             Resources Type
                         </div>
@@ -131,7 +132,7 @@
 
 </div>
 {% endblock %}
-{% block graphscript %}
+{% block scripts %}
     <script src="{{ url_for ('static', filename='lib/js/crossfilter.js')}}"></script>
     <script src="{{ url_for ('static', filename='lib/js/d3.js')}}"></script>
     <script src="{{ url_for ('static', filename='lib/js/dc.js')}}"></script>
