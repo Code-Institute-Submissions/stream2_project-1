@@ -1,33 +1,69 @@
+body {
+    position: relative;
+    margin: 0;
+}
+
 #background {
-    background-attachment: fixed;
-    background-image: url("../images/welcome_to_florida.jpg");
+    background-attachment: scroll;
+    background-image: url("../images/california_state_government.jpg");
     -webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
     background-size: cover;
     position: relative;
 }
+.footer {
+    width: 100%;
+    background-color: rgba(61, 61, 61, 0.9);
+    border-color: #080808;
+    padding: 1rem;
+    text-align: center;
+    color: #ffffff;
+}
+.content-blocks {
+    background-color: rgba(255, 255, 255, 0.4);
+    /*height: 400px;*/
+}
+.content-container {
+    padding: 60px 20px 20px;
+}
+.contact-form h1 {
+    text-align: center;
+    font-weight: bolder;
+}
+.learn-more {
+    margin-bottom: 5px;
+}
+.stats-heading {
+    text-align: center;
+    margin-bottom: 5px;
+}
 
 
 
+.stacked-divs {
+    width: 250px;
+}
 
 #number-projects-nd {
-   font-size: 60px;
+    font-size: 60px;
 }
 #total-donations-nd {
-   font-size: 60px;
+    font-size: 60px;
 }
 .dc-chart g.row text {
    fill: black;
    font-size: 12px;
 }
+.dc-chart svg g {
+}
 #total-projects {
-   background: #33CC99;
+   background: #ffffff;
    width: 200px;
    position: relative;
    height: 60px;
    font-size: 29px;
-   color: white;
+   color: black;
    vertical-align: middle;
    text-align: center;
    padding-top: 12px;
@@ -46,8 +82,8 @@
    padding-bottom: 0px;
 }
 .dc-select-menu {
-   background: #33CC99;
-   width: 80%;
+   background: #00a1ff;
+   width: 100%;
    border: none;
    position: relative;
    height: 31px;
@@ -58,4 +94,95 @@
    padding-top: 4px;
    padding-bottom: 0px;
 
+}
+.fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+}
+.fa:hover {
+    opacity: 0.7;
+}
+/* Facebook */
+.fa-facebook {
+    background: #3B5998;
+    color: white;
+}
+/* Twitter */
+.fa-twitter {
+    background: #55ACEE;
+    color: white;
+}
+
+
+/* Contact form */
+form label {
+    font-size: 1.2em;
+    font-weight: bold;
+    display: block;
+    padding: 10px 0;
+}
+
+form input#name,
+form input#email,
+form input#subject {
+    width: 400px;
+    background-color: #fafafa;
+    -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+            border-radius: 3px;
+    border: 1px solid #cccccc;
+    padding: 5px;
+    font-size: 1.1em;
+}
+
+form textarea#message {
+    width: 500px;
+    height: 100px;
+    background-color: #fafafa;
+    -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+            border-radius: 3px;
+    border: 1px solid #cccccc;
+    margin-bottom: 10px;
+    padding: 5px;
+    font-size: 1.1em;
+}
+
+form input#submit {
+    display: block;
+    -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+            border-radius: 3px;
+    border:1px solid #d8d8d8;
+    padding: 10px;
+    font-weight:bold;
+    text-align: center;
+    color: #000000;
+    background-color: #f4f4f4;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f4f4f4), color-stop(100%, #e5e5e5));
+    background-image: -webkit-linear-gradient(top, #f4f4f4, #e5e5e5);
+    background-image: -moz-linear-gradient(top, #f4f4f4, #e5e5e5);
+    background-image: -ms-linear-gradient(top, #f4f4f4, #e5e5e5);
+    background-image: -o-linear-gradient(top, #f4f4f4, #e5e5e5);
+    background-image: linear-gradient(top, #f4f4f4, #e5e5e5);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#f4f4f4, endColorstr=#e5e5e5);
+}
+
+form input#submit:hover{
+    cursor: pointer;
+    border:1px solid #c1c1c1;
+    background-color: #dbdbdb;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#dbdbdb), color-stop(100%, #cccccc));
+    background-image: -webkit-linear-gradient(top, #dbdbdb, #cccccc);
+    background-image: -moz-linear-gradient(top, #dbdbdb, #cccccc);
+    background-image: -ms-linear-gradient(top, #dbdbdb, #cccccc);
+    background-image: -o-linear-gradient(top, #dbdbdb, #cccccc);
+    background-image: linear-gradient(top, #dbdbdb, #cccccc);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#dbdbdb, endColorstr=#cccccc);
+}
+/* Message flashing */
+.flash {
+    padding: 10px;
+    width: 400px;
 }

@@ -1,10 +1,15 @@
-from flask import Flask
-from flask import render_template
+from flask import Flask, render_template, request, flash
 from pymongo import MongoClient
 import json
 import os
+from forms import ContactForm
+from flask_mail import Message, Mail
+
+mail = Mail()
 
 app = Flask(__name__)
+
+app.secret_key = 'lock_it_down5312'
 
 '''
 MONGODB_HOST = 'localhost'
@@ -13,18 +18,42 @@ DBS_NAME = 'donorsUSA'
 COLLECTION_NAME = 'projects'
 '''
 
+app.config["MAIL_SERVER"] = "smtp.gmail.com"
+app.config["MAIL_PORT"] = 465
+app.config["MAIL_USE_SSL"] = True
+app.config["MAIL_USERNAME"] = 'coylec.devwork@gmail.com'
+app.config["MAIL_PASSWORD"] = 'CodeTheNet17%'
+
+mail.init_app(app)
+
 MONGO_URI = os.getenv('MONGODB_URI', 'mongodb://localhost:27017')
 DBS_NAME = os.getenv('MONGO_DB_NAME', 'donorsUSA')
 COLLECTION_NAME = 'projects'
 
 
-
-@app.route("/")
+@app.route("/", methods=['GET', 'POST'])
 def index():
     """
-    A Flask view to serve the main dashboard page.
+    A Flask view to serve the main home page.
     """
-    return render_template("home.html")
+    form = ContactForm()
+
+    if request.method == 'POST':
+        if form.validate() == False:
+            flash('Allfields are required')
+            return render_template('home.html', form=form)
+        else:
+            msg = Message(form.subject.data, sender='coylec.devwork@gmail.com', recipients=['conradcoyle@gmail.com'])
+            msg.body = """
+                  From: %s <%s>
+                  %s
+                  """ % (form.name.data, form.email.data, form.message.data)
+            mail.send(msg)
+
+            return render_template('home.html', success=True)
+
+    elif request.method == 'GET':
+        return render_template("home.html", form=form)
 
 
 @app.route('/statistics')

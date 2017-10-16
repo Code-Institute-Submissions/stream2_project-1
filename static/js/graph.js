@@ -95,8 +95,8 @@ function makeGraphs(error, donorsUSProjects) {
         .formatNumber(d3.format(".3s"));
 
     timeChart
-        .ordinalColors(["#C96A23"])
-        .width(1200)
+        .ordinalColors(["#045a8d"])
+        .width(1500)
         .height(300)
         .margins({top: 30, right: 50, bottom: 30, left: 50})
         .dimension(dateDim)
@@ -110,24 +110,24 @@ function makeGraphs(error, donorsUSProjects) {
 
 
     resourceTypeChart
-        .ordinalColors(["#79CED7", "#66AFB2", "#C96A23", "#D3D1C5", "#F5821F"])
-        .width(300)
+        .ordinalColors(["#045a8d", "#2b8cbe", "#74a9cf", "#bdc9e1", "#DFD7EE"])
+        .width(700)
         .height(250)
         .dimension(resourceTypeDim)
         .group(numProjectsByResourceType)
         .xAxis().ticks(4);
 
     povertyLevelChart
-        .ordinalColors(["#79CED7", "#66AFB2", "#C96A23", "#D3D1C5", "#F5821F"])
-        .width(300)
+        .ordinalColors(["#045a8d", "#2b8cbe", "#74a9cf", "#bdc9e1", "#DFD7EE"])
+        .width(700)
         .height(250)
         .dimension(povertyLevelDim)
         .group(numProjectsByPovertyLevel)
         .xAxis().ticks(4);
 
     fundingStatusChart
-        .ordinalColors(["#79CED7", "#66AFB2", "#C96A23", "#D3D1C5", "#F5821F"])
-        .height(220)
+        .ordinalColors(["#045a8d", "#2b8cbe", "#74a9cf", "#bdc9e1", "#DFD7EE"])
+        .height(250)
         .radius(90)
         .innerRadius(40)
         .transitionDuration(1500)
@@ -137,7 +137,7 @@ function makeGraphs(error, donorsUSProjects) {
     donationsByStateChart
         .width(1800)
         .height(400)
-        .ordinalColors(['#0052a5'])
+        .ordinalColors(['#045a8d'])
         .transitionDuration(500)
         .margins({top: 30, right: 50, bottom: 30, left: 50})
         .dimension(stateDim)

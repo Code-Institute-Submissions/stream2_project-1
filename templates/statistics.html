@@ -1,21 +1,88 @@
 {% extends 'index.html' %}
 
 {% block content %}
-<div  id="outer" class="container-fluid">
+<div  id="outer" class="container-fluid content-container">
     <div class="row">
-        <button class="intro_button" type="button" autofocus onclick="javascript:introJs().start();">Start Tour!</button>
+        <div class="col-md-2">
+            <button class="intro_button btn btn-default learn-more" type="button" autofocus onclick="javascript:introJs().start();">Learn More</button>
+
+        </div>
+        <div class="col-md-10 stats-heading">
+            <h1>National School Donations Statistics</h1>
+        </div>
+
+    </div>
+    <div class="row">
                 <!-- Time Chart -->
-                <div class="col-sm-12" data-step="1" data-intro="The description that you want" style="font-weight: normal" data-position="right">
-                    <div class="chart-wrapper">
+                <!-- Time Chart -->
+        <div class="col-md-2">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="chart-wrapper stacked-divs">
                         <div class="chart-title">
-                            Number of Donations
+                            Donation State
                         </div>
                         <div class="chart-stage">
-                            <div id="time-chart"></div>
+                            <div id="menu-select"></div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                     <div class="chart-wrapper stacked-divs">
+                        <div class="chart-title">
+                            Total Number of Donations
+                        </div>
+                        <div class="chart-stage">
+                            <div id="number-projects-nd"></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="chart-wrapper stacked-divs">
+                        <div class="chart-title">
+                            Total Donations in USD
+                        </div>
+                        <div class="chart-stage">
+                            <div id="total-donations-nd"></div>
                         </div>
                     </div>
                 </div>
-                <!-- Time Chart -->
+            </div>
+
+
+        </div>
+        <div class="col-md-10" data-step="1" data-intro="The description that you want" style="font-weight: normal" data-position="right">
+            <div class="chart-wrapper">
+                <div class="chart-title">
+                    Number of Donations
+                </div>
+                <div class="chart-stage">
+                    <div id="time-chart"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <!-- State Donations Chart -->
+        <div class="col-sm-12">
+            <div class="chart-wrapper">
+                <div class="chart-title">
+                    Number of Donations by State
+                </div>
+                <div class="chart-stage">
+                    <div id="state-donations-chart"></div>
+                </div>
+            </div>
+        </div>
+        <!-- State Donations Chart -->
+
     </div>
 
     <div class="row">
@@ -57,69 +124,6 @@
                     </div>
                 </div>
         <!-- Resources -->
-
-    </div>
-    <div class="row">
-        <!-- menu select -->
-        <div class="col-sm-2">
-            <div class="chart-wrapper">
-                <div class="chart-title">
-                    Donation State
-                </div>
-                <div class="chart-stage">
-                    <div id="menu-select"></div>
-                </div>
-            </div>
-        </div>
-        <!-- menu select -->
-
-        <!-- Metric 1 -->
-        <div class="col-sm-5">
-            <div class="chart-wrapper">
-                <div class="chart-title">
-                    Total Number of Donations
-                </div>
-                <div class="chart-stage" style="background: #33CC99;
-                position: relative;
-                font-size: 29px;
-                color: white;
-                vertical-align: middle;
-                text-align: center;
-                padding-top: 12px;
-                padding-bottom: 0px;">
-                <div id="number-projects-nd"></div>
-                </div>
-            </div>
-        </div>
-        <!-- Metric 1 -->
-
-        <!-- Metric 2 -->
-        <div class="col-sm-5">
-            <div class="chart-wrapper">
-                <div class="chart-title">
-                    Total Donations in USD
-                </div>
-                <div class="chart-stage">
-                    <div id="total-donations-nd"></div>
-                </div>
-            </div>
-        </div>
-        <!-- Metric 2 -->
-    </div>
-
-    <div class="row">
-        <!-- State Donations Chart -->
-        <div class="col-sm-12">
-            <div class="chart-wrapper">
-                <div class="chart-title">
-                    Number of Donations by State
-                </div>
-                <div class="chart-stage">
-                    <div id="state-donations-chart"></div>
-                </div>
-            </div>
-        </div>
-        <!-- State Donations Chart -->
 
     </div>
 

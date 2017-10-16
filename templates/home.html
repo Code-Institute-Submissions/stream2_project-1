@@ -1,11 +1,90 @@
 {% extends 'index.html' %}
 
 {% block content %}
-<div class="container-fluid">
+<div class="container content-blocks content-container">
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-6">
+            <h1>Vote Bill Pryce #1</h1>
+            <p>Thanks you for taking the time to visit us here. As you may know I am running for Governor of this
+            great state of California. I have had a varied carreer including many years in local and national politics and
+            I believe I am the right person to direct our beloved state in the years ahead. There are many issues facing us both locally and nationally
+            and it is important that we make the right decisions and manage our state finances appropriately.
+            Below I have outlined some of my main goals which I will continually strive to achieve if elected.</p>
             
         </div>
+        <div class="col-md-6">
+            <img src="../static/images/california_state_seal.png" class="no-opac img-responsive center-block">
+            
+        </div>
+    </div>
+    <div class="row">
+        <div class="cold-md-12 contact-form">
+            <h1>Contact Us</h1>
+            
+        </div>
+        
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <h2>Address</h2>
+            <p>123 Willow Street,<br> Maybury Avenue,<br> Sacramento 94203,<br> California </p>
+            <h2>Telephone</h2>
+            <p>+1 916 12345678</p>
+            <h2>Email</h2>
+            <p>billprycecampaign@example.com</p>
+            
+        </div>
+        <div class="col-md-6">
+
+            {% if success %}
+                <p>Thank you for your message. We'll get back to you shortly.</p>
+
+            {% else %}
+
+                {% for message in form.name.errors %}
+                    <div class="flash">{{ message }}</div>
+                {% endfor %}
+
+                {% for message in form.email.errors %}
+                    <div class="flash">{{ message }}</div>
+                {% endfor %}
+
+                {% for message in form.subject.errors %}
+                    <div class="flash">{{ message }}</div>
+                {% endfor %}
+
+                {% for message in form.message.errors %}
+                    <div class="flash">{{ message }}</div>
+                {% endfor %}
+                <form action="{{ url_for('index') }}" method="post">
+                    <fieldset>
+                    <legend>Send Us a Message</legend>
+                        {{ form.hidden_tag() }}
+
+                        <div class="form-group">
+                            {{ form.name.label }}
+                            {{ form.name }}
+                        </div>
+                        <div class="form-group">
+                            {{ form.email.label }}
+                            {{ form.email }}
+                        </div>
+                        <div class="form-group">
+                            {{ form.subject.label }}
+                            {{ form.subject }}
+                        </div>
+                        <div class="form-group">
+                            {{ form.message.label }}
+                            {{ form.message }}
+                        </div>
+                        {{ form.submit }}
+                    </fieldset>
+
+                </form>
+            {% endif %}
+            
+        </div>
+        
     </div>
 
 </div>
