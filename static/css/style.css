@@ -40,9 +40,8 @@ body {
 }
 
 
-
 .stacked-divs {
-    width: 250px;
+    max-width: 250px;
 }
 
 #number-projects-nd {
@@ -94,6 +93,9 @@ body {
    padding-top: 4px;
    padding-bottom: 0px;
 
+}
+#time-chart {
+    overflow: scroll;
 }
 .fa {
     padding: 20px;

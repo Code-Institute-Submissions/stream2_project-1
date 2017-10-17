@@ -96,7 +96,7 @@ function makeGraphs(error, donorsUSProjects) {
 
     timeChart
         .ordinalColors(["#045a8d"])
-        .width(1500)
+        .width(1800)
         .height(300)
         .margins({top: 30, right: 50, bottom: 30, left: 50})
         .dimension(dateDim)
@@ -161,4 +161,5 @@ function makeGraphs(error, donorsUSProjects) {
 
 
     dc.renderAll();
+
 }
