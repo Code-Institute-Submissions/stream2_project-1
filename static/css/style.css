@@ -1,6 +1,7 @@
 body {
     position: relative;
     margin: 0;
+    font-family: 'Merriweather', 'Georgia', serif;
 }
 
 #background {
@@ -22,14 +23,16 @@ body {
 }
 .content-blocks {
     background-color: rgba(255, 255, 255, 0.4);
-    /*height: 400px;*/
 }
 .content-container {
     padding: 60px 20px 20px;
 }
-.contact-form h1 {
+.contact-form-body {
+    padding: 20px 0;
+}
+.home-page h1 {
     text-align: center;
-    font-weight: bolder;
+    padding: 15px 0;
 }
 .learn-more {
     margin-bottom: 5px;
@@ -37,6 +40,21 @@ body {
 .stats-heading {
     text-align: center;
     margin-bottom: 5px;
+}
+.rounded-content-box {
+    border-radius: 15px;
+}
+h1 {
+    font-weight: bolder;
+}
+p {
+    font-size: 18px;
+}
+.contact-details {
+    padding: 20px 0;
+}
+.contact-details a {
+    color: #000000;
 }
 
 
@@ -94,9 +112,14 @@ body {
    padding-bottom: 0px;
 
 }
-#time-chart {
-    overflow: scroll;
+.header-block {
+    margin-bottom: 10px;
+    padding: 10px;
 }
+.header-block a {
+    color: #ffffff;
+}
+
 .fa {
     padding: 20px;
     font-size: 30px;
@@ -187,4 +210,7 @@ form input#submit:hover{
 .flash {
     padding: 10px;
     width: 400px;
+}
+.btn-default {
+    border: 2px solid #00a1ff;
 }
