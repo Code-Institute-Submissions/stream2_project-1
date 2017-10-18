@@ -203,24 +203,12 @@ form input#submit {
     text-align: center;
     color: #000000;
     background-color: #f4f4f4;
-    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f4f4f4), color-stop(100%, #e5e5e5));
-    background-image: -webkit-linear-gradient(top, #f4f4f4, #e5e5e5);
-    background-image: -moz-linear-gradient(top, #f4f4f4, #e5e5e5);
-    background-image: -ms-linear-gradient(top, #f4f4f4, #e5e5e5);
-    background-image: -o-linear-gradient(top, #f4f4f4, #e5e5e5);
-    background-image: linear-gradient(top, #f4f4f4, #e5e5e5);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#f4f4f4, endColorstr=#e5e5e5);
 }
 
 form input#submit:hover{
     cursor: pointer;
     border:1px solid #c1c1c1;
     background-color: #dbdbdb;
-    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#dbdbdb), color-stop(100%, #cccccc));
-    background-image: -webkit-linear-gradient(top, #dbdbdb, #cccccc);
-    background-image: -moz-linear-gradient(top, #dbdbdb, #cccccc);
-    background-image: -ms-linear-gradient(top, #dbdbdb, #cccccc);
-    background-image: -o-linear-gradient(top, #dbdbdb, #cccccc);
-    background-image: linear-gradient(top, #dbdbdb, #cccccc);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#dbdbdb, endColorstr=#cccccc);
 }
 /* Message flashing */
 .flash {
@@ -245,13 +233,8 @@ form input#submit:hover{
     }
 
 }
-
-@media only screen and (max-width: 1800px) {
+@media only screen and (max-width: 1200px) {
     .chart-scroll {
         overflow-x: scroll !important;
     }
-}
-
-
-@media only screen and (max-width: 400px) {
 }
