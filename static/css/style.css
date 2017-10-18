@@ -1,9 +1,8 @@
 body {
     position: relative;
     margin: 0;
-    font-family: 'Merriweather', 'Georgia', serif;
+    font-family: 'Merriweather', 'Georgia', 'Times New Roman', serif;
 }
-
 #background {
     background-attachment: scroll;
     background-image: url("../images/california_state_government.jpg");
@@ -11,7 +10,18 @@ body {
 	-moz-background-size: cover;
 	-o-background-size: cover;
     background-size: cover;
+    background-position: center;
     position: relative;
+}
+h1 {
+    font-weight: bolder;
+}
+p {
+    font-size: 18px;
+    font-weight: bolder;
+}
+hr {
+    border-color: black;
 }
 .footer {
     width: 100%;
@@ -22,13 +32,19 @@ body {
     color: #ffffff;
 }
 .content-blocks {
-    background-color: rgba(255, 255, 255, 0.4);
+    background-color: rgba(255, 255, 255, 0.5);
 }
 .content-container {
     padding: 60px 20px 20px;
 }
-.contact-form-body {
-    padding: 20px 0;
+.rounded-content-box {
+    border-radius: 15px;
+}
+.home-page {
+    padding: 20px 20px;
+}
+.home-page a {
+    color: #000000;
 }
 .home-page h1 {
     text-align: center;
@@ -41,76 +57,13 @@ body {
     text-align: center;
     margin-bottom: 5px;
 }
-.rounded-content-box {
-    border-radius: 15px;
-}
-h1 {
-    font-weight: bolder;
-}
-p {
-    font-size: 18px;
-}
-.contact-details {
+#cal-map {
+    width: auto;
+    height: 350px;
     padding: 20px 0;
 }
-.contact-details a {
-    color: #000000;
-}
-
-
 .stacked-divs {
     max-width: 250px;
-}
-
-#number-projects-nd {
-    font-size: 60px;
-}
-#total-donations-nd {
-    font-size: 60px;
-}
-.dc-chart g.row text {
-   fill: black;
-   font-size: 12px;
-}
-.dc-chart svg g {
-}
-#total-projects {
-   background: #ffffff;
-   width: 200px;
-   position: relative;
-   height: 60px;
-   font-size: 29px;
-   color: black;
-   vertical-align: middle;
-   text-align: center;
-   padding-top: 12px;
-   padding-bottom: 0px;
-}
-#net-donations {
-   background: #33CC99;
-   width: 200px;
-   position: relative;
-   height: 60px;
-   font-size: 29px;
-   color: white;
-   vertical-align: middle;
-   text-align: center;
-   padding-top: 12px;
-   padding-bottom: 0px;
-}
-.dc-select-menu {
-   background: #00a1ff;
-   width: 100%;
-   border: none;
-   position: relative;
-   height: 31px;
-   font-size: 15px;
-   color: white;
-   vertical-align: middle;
-   text-align: center;
-   padding-top: 4px;
-   padding-bottom: 0px;
-
 }
 .header-block {
     margin-bottom: 10px;
@@ -119,7 +72,6 @@ p {
 .header-block a {
     color: #ffffff;
 }
-
 .fa {
     padding: 20px;
     font-size: 30px;
@@ -134,18 +86,82 @@ p {
 .fa-facebook {
     background: #3B5998;
     color: white;
+    border-radius: 50px;
+    margin: 50px 10px 20px 0;
 }
 /* Twitter */
 .fa-twitter {
     background: #55ACEE;
     color: white;
+    border-radius: 50px;
+    margin: 50px 10px 20px 10px;
+}
+.btn-default {
+    border: 2px solid #00a1ff;
+}
+
+
+/* Charts */
+#number-projects-nd {
+    font-size: 60px;
+}
+#total-donations-nd {
+    font-size: 60px;
+}
+.dc-chart g.row text {
+   fill: black;
+   font-size: 12px;
+}
+#total-projects {
+   background: #ffffff;
+   width: 200px;
+   position: relative;
+   height: 60px;
+   font-size: 29px;
+   color: black;
+   vertical-align: middle;
+   text-align: center;
+   padding-top: 12px;
+   padding-bottom: 0;
+}
+#net-donations {
+   background: #33CC99;
+   width: 200px;
+   position: relative;
+   height: 60px;
+   font-size: 29px;
+   color: white;
+   vertical-align: middle;
+   text-align: center;
+   padding-top: 12px;
+   padding-bottom: 0;
+}
+.dc-select-menu {
+   background: #00a1ff;
+   width: 100%;
+   border: none;
+   position: relative;
+   height: 31px;
+   font-size: 15px;
+   color: white;
+   vertical-align: middle;
+   text-align: center;
+   padding-top: 4px;
+   padding-bottom: 0;
+
+}
+.row-chart-style {
+    max-width: 350px;
+}
+.pie-chart-style {
+    max-width: 350px;
 }
 
 
 /* Contact form */
 form label {
     font-size: 1.2em;
-    font-weight: bold;
+    font-weight: bolder;
     display: block;
     padding: 10px 0;
 }
@@ -208,9 +224,34 @@ form input#submit:hover{
 }
 /* Message flashing */
 .flash {
+    background-color: #ffc4c3;
     padding: 10px;
     width: 400px;
 }
-.btn-default {
-    border: 2px solid #00a1ff;
+
+
+/* Media Queries */
+@media only screen and (max-width: 500px) {
+    form input#name,
+    form input#email,
+    form input#subject {
+        width: 350px;
+    }
+    form textarea#message {
+        width: 350px;
+    }
+    .flash {
+        max-width: 350px;
+    }
+
+}
+
+@media only screen and (max-width: 1800px) {
+    .chart-scroll {
+        overflow-x: scroll !important;
+    }
+}
+
+
+@media only screen and (max-width: 400px) {
 }

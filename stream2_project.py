@@ -9,7 +9,7 @@ mail = Mail()
 
 app = Flask(__name__)
 
-app.secret_key = 'lock_it_down5312'
+app.secret_key = 'SECRET_KEY'
 
 '''
 MONGODB_HOST = 'localhost'
@@ -21,8 +21,8 @@ COLLECTION_NAME = 'projects'
 app.config["MAIL_SERVER"] = "smtp.gmail.com"
 app.config["MAIL_PORT"] = 465
 app.config["MAIL_USE_SSL"] = True
-app.config["MAIL_USERNAME"] = 'coylec.devwork@gmail.com'
-app.config["MAIL_PASSWORD"] = 'CodeTheNet17%'
+app.config["MAIL_USERNAME"] = ''
+app.config["MAIL_PASSWORD"] = ''
 
 mail.init_app(app)
 

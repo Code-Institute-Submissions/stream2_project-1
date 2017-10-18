@@ -47,9 +47,6 @@ function makeGraphs(error, donorsUSProjects) {
         return d["total_donations"];
     });
     var stateGroup = stateDim.group();
-    /*var spotlightState = stateDim.filter("FL").reduceSum(function (d) {
-        return d["total_donations"];
-    });*/
 
 
     var all = ndx.groupAll();
@@ -68,7 +65,6 @@ function makeGraphs(error, donorsUSProjects) {
     var povertyLevelChart = dc.rowChart("#poverty-level-row-chart");
     var numberProjectsND = dc.numberDisplay("#number-projects-nd");
     var totalDonationsND = dc.numberDisplay("#total-donations-nd");
-    //var spotlightStateND = dc.numberDisplay("#spotlightState-nd");
     var fundingStatusChart = dc.pieChart("#funding-chart");
 
     var selectField = dc.selectMenu('#menu-select');
@@ -96,13 +92,12 @@ function makeGraphs(error, donorsUSProjects) {
 
     timeChart
         .ordinalColors(["#045a8d"])
-        .width(1800)
+        .width(1100)
         .height(300)
         .margins({top: 30, right: 50, bottom: 30, left: 50})
         .dimension(dateDim)
         .group(numProjectsByDate)
-        //.renderArea(true)
-        .transitionDuration(500)
+        .transitionDuration(600)
         .x(d3.time.scale().domain([minDate, maxDate]))
         .elasticY(true)
         .xAxisLabel("Year")
@@ -111,7 +106,7 @@ function makeGraphs(error, donorsUSProjects) {
 
     resourceTypeChart
         .ordinalColors(["#045a8d", "#2b8cbe", "#74a9cf", "#bdc9e1", "#DFD7EE"])
-        .width(700)
+        .width(350)
         .height(250)
         .dimension(resourceTypeDim)
         .group(numProjectsByResourceType)
@@ -119,7 +114,7 @@ function makeGraphs(error, donorsUSProjects) {
 
     povertyLevelChart
         .ordinalColors(["#045a8d", "#2b8cbe", "#74a9cf", "#bdc9e1", "#DFD7EE"])
-        .width(700)
+        .width(350)
         .height(250)
         .dimension(povertyLevelDim)
         .group(numProjectsByPovertyLevel)
@@ -135,10 +130,10 @@ function makeGraphs(error, donorsUSProjects) {
         .group(numProjectsByFundingStatus);
 
     donationsByStateChart
-        .width(1800)
+        .width(1100)
         .height(400)
         .ordinalColors(['#045a8d'])
-        .transitionDuration(500)
+        .transitionDuration(600)
         .margins({top: 30, right: 50, bottom: 30, left: 50})
         .dimension(stateDim)
         .group(totalDonationsByState)
@@ -150,14 +145,6 @@ function makeGraphs(error, donorsUSProjects) {
         .x(d3.scale.ordinal().domain(stateGroup))
         .y(d3.scale.linear().domain([0, maxState]))
         .yAxis().tickFormat(d3.format("s")).ticks(7);
-
-    /*spotlightStateND
-        .formatNumber(d3.format("d"))
-        .valueAccessor(function (d) {
-            return d;
-        })
-        .group(spotlightState)
-        .formatNumber(d3.format(".3s"));*/
 
 
     dc.renderAll();
