@@ -108,34 +108,6 @@ hr {
 #total-donations-nd {
     font-size: 60px;
 }
-.dc-chart g.row text {
-   fill: black;
-   font-size: 12px;
-}
-#total-projects {
-   background: #ffffff;
-   width: 200px;
-   position: relative;
-   height: 60px;
-   font-size: 29px;
-   color: black;
-   vertical-align: middle;
-   text-align: center;
-   padding-top: 12px;
-   padding-bottom: 0;
-}
-#net-donations {
-   background: #33CC99;
-   width: 200px;
-   position: relative;
-   height: 60px;
-   font-size: 29px;
-   color: white;
-   vertical-align: middle;
-   text-align: center;
-   padding-top: 12px;
-   padding-bottom: 0;
-}
 .dc-select-menu {
    background: #00a1ff;
    width: 100%;
@@ -148,7 +120,6 @@ hr {
    text-align: center;
    padding-top: 4px;
    padding-bottom: 0;
-
 }
 .row-chart-style {
     max-width: 350px;
@@ -223,13 +194,13 @@ form input#submit:hover{
     form input#name,
     form input#email,
     form input#subject {
-        width: 350px;
+        width: 300px;
     }
     form textarea#message {
-        width: 350px;
+        width: 300px;
     }
     .flash {
-        max-width: 350px;
+        max-width: 300px;
     }
 
 }

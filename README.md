@@ -3,10 +3,10 @@
 ## Overview
 
 ### What is this site for?
-This site is a site for a fictional candidate running for the office of Governor of California.
+This is a site for a fictional candidate running for the office of Governor of California.
 It is primarily focused on displaying the use of a data-driven website.  
 ### What does it do?
-It gives general information about the candidate and allows users to contact them to various 
+It gives general information about the candidate and allows users to contact them by various 
 means including a contact form. It also displays data from a school donations database taken from
 [DonarsChoose.org](https://www.donorschoose.org/) using various visualisations and charts.
 
@@ -28,7 +28,7 @@ responsiveness.
 ## Bugs
 
 ### Existing Bugs
-- The data charts are not responsive to smaller screen sizes. I tried to find a way to do this but was unable 
+- The data charts are not responsive to smaller screen sizes. I tried to find a way to do this but was unable to
 get it to work at this time. I added a scroll bar so that the user can scroll across to see the hidden part of
 the charts on smaller screens.
 - In general I am not happy with the design for mobile devices. It is not as user friendly at smaller screen sizes

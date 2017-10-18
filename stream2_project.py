@@ -32,6 +32,7 @@ app.secret_key = os.getenv('SECRET_KEY')
 MONGO_URI = os.getenv('MONGODB_URI', 'mongodb://localhost:27017')
 DBS_NAME = os.getenv('MONGO_DB_NAME', 'donorsUSA')
 COLLECTION_NAME = 'projects'
+app.config['DEBUG'] = os.getenv('DEBUG', 'True')
 
 
 @app.route("/", methods=['GET', 'POST'])
@@ -92,4 +93,4 @@ def donor_projects():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
