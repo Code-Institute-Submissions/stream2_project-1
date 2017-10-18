@@ -9,7 +9,7 @@ mail = Mail()
 
 app = Flask(__name__)
 
-app.secret_key = 'SECRET_KEY'
+# app.secret_key = 'SECRET_KEY'
 
 '''
 MONGODB_HOST = 'localhost'
@@ -21,14 +21,17 @@ COLLECTION_NAME = 'projects'
 app.config["MAIL_SERVER"] = "smtp.gmail.com"
 app.config["MAIL_PORT"] = 465
 app.config["MAIL_USE_SSL"] = True
-app.config["MAIL_USERNAME"] = ''
-app.config["MAIL_PASSWORD"] = ''
+# app.config["MAIL_USERNAME"] = ''
+# app.config["MAIL_PASSWORD"] = ''
 
 mail.init_app(app)
 
+app.secret_key = os.getenv('SECRET_KEY')
 MONGO_URI = os.getenv('MONGODB_URI', 'mongodb://localhost:27017')
 DBS_NAME = os.getenv('MONGO_DB_NAME', 'donorsUSA')
 COLLECTION_NAME = 'projects'
+app.config["MAIL_USERNAME"] = os.getenv('MAIL_USERNAME')
+app.config["MAIL_PASSWORD"] = os.getenv('MAIL_PASSWORD')
 
 
 @app.route("/", methods=['GET', 'POST'])
