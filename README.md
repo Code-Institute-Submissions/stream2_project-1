@@ -33,6 +33,10 @@ get it to work at this time. I added a scroll bar so that the user can scroll ac
 the charts on smaller screens.
 - In general I am not happy with the design for mobile devices. It is not as user friendly at smaller screen sizes
 as I would like. However due to to time constraints I am unable to rectify it at this time.
+- Using Gmail  in the email backend to send the contact form messages. Access was blocked once since I deployed the site
+but I noticed this on final tests. It has now been fixed but I don't know why access was blocked the first time so the
+problem could arise again.
+- The labels on some of the charts are unclear depending on the length of the bars. A better solution would be needed.
 
 ## Tech Used
 
