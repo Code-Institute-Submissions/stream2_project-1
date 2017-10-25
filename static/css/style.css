@@ -4,13 +4,14 @@ body {
     font-family: 'Merriweather', 'Georgia', 'Times New Roman', serif;
 }
 #background {
-    background-attachment: scroll;
+    background-attachment: fixed;
     background-image: url("../images/california_state_government.jpg");
     -webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
     position: relative;
 }
 h1 {
@@ -32,7 +33,7 @@ hr {
     color: #ffffff;
 }
 .content-blocks {
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.8);
 }
 .content-container {
     padding: 60px 20px 20px;
@@ -70,7 +71,7 @@ hr {
     padding: 10px;
 }
 .header-block a {
-    color: #ffffff;
+    color: #0087d6;
 }
 .fa {
     padding: 20px;
@@ -97,7 +98,7 @@ hr {
     margin: 50px 10px 20px 10px;
 }
 .btn-default {
-    border: 2px solid #00a1ff;
+    border: 2px solid #0087d6;
 }
 
 
@@ -109,7 +110,7 @@ hr {
     font-size: 60px;
 }
 .dc-select-menu {
-   background: #00a1ff;
+   background: #0087d6;
    width: 100%;
    border: none;
    position: relative;
@@ -190,6 +191,15 @@ form input#submit:hover{
 
 
 /* Media Queries */
+@media only screen and (max-width: 1200px) {
+    .chart-scroll {
+        overflow-x: scroll !important;
+    }
+    form textarea#message {
+        width: 400px;
+    }
+}
+
 @media only screen and (max-width: 500px) {
     form input#name,
     form input#email,
@@ -204,8 +214,18 @@ form input#submit:hover{
     }
 
 }
-@media only screen and (max-width: 1200px) {
-    .chart-scroll {
-        overflow-x: scroll !important;
+
+@media only screen and (max-width: 300px) {
+    form input#name,
+    form input#email,
+    form input#subject {
+        width: 270px;
     }
+    form textarea#message {
+        width: 270px;
+    }
+    .flash {
+        max-width: 270px;
+    }
+
 }
