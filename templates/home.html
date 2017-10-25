@@ -67,8 +67,9 @@
             <img src="../static/images/california-county-map.jpg" id="cal-map" class="img-responsive center-block">
             
         </div>
+        <!-- Contact Form -->
         <div class="col-md-6 home-page">
-
+            <!-- If successful display this message -->
             {% if success %}
                 <p>Thank you for your message. We'll get back to you shortly.</p>
 
@@ -77,13 +78,13 @@
                 <form action="{{ url_for('index') }}" method="post">
                     <fieldset>
                     <legend>Send Us a Message</legend>
+                        <!-- CSRF Protection -->
                         {{ form.hidden_tag() }}
 
-
+                        <!-- Form fields and flash errors -->
                         {% for message in form.name.errors %}
                             <div class="flash">{{ message }}</div>
                         {% endfor %}
-
                         <div class="form-group">
                             {{ form.name.label }}
                             {{ form.name }}

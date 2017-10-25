@@ -58,5 +58,6 @@ as I would like. However due to to time constraints I am unable to rectify it at
 5. Download the database from [DonarsChoose.org](https://www.donorschoose.org/)
 6. You will need MongoDB installed locally to serve the data
 7. Start an instance of MongoDB in a separate terminal window by running `mongod`
+8. The project can be viewed on http://127.0.0.1:5000/
 
 My site can be viewed on Heroku [here]( https://coylec-streamtwo-project.herokuapp.com/).
